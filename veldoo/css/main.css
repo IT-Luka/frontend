@@ -1,0 +1,348 @@
+/* font-family: 'Roboto Mono', monospace; ; */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  text-decoration: none;
+}
+html {
+  scroll-behavior: smooth;
+}
+html,
+body {
+  scroll-snap-type: y mandatory;
+  scroll-snap-stop: always;
+}
+a {
+  text-decoration: none;
+}
+
+:root {
+  --clr-primary: rgba(235, 69, 32, 0.82);
+  --clr-dark: #aaa4a4;
+  --clr-light: #f5efeb;
+  --fw-normal: 400;
+  --fw-bold: 700;
+}
+
+.bar--horizontal {
+  background-color: var(--clr-primary);
+  height: 0.25rem;
+  width: 16rem;
+  margin-top: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+.slide--right {
+  box-shadow: inset 0 0 0 var(--clr-primary);
+  -webkit-transition: ease-out 0.4s;
+  -moz-transition: ease-out 0.4s;
+  transition: ease-out 0.4s;
+}
+.slide--right:hover {
+  box-shadow: inset 15em 0 0 0 var(--clr-light);
+  color: var(--clr-primary);
+}
+.slide--right:hover h2 {
+  padding-left: 0.5em;
+}
+.slide--inside:hover {
+  box-shadow: inset 0 0 0 2em var(--clr-light);
+  color: var(--clr-primary);
+}
+
+.nav-header {
+  position: fixed;
+  width: 100%;
+  display: none;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.nav-slider {
+  position: fixed;
+  top: 30%;
+}
+.nav--number {
+  font-size: 2rem;
+  padding-left: 2.6rem;
+}
+.nav-list {
+  padding: 0.5rem;
+}
+.nav-list > a {
+  color: var(--clr-dark);
+}
+.nav-list:hover > a {
+  color: var(--clr-primary);
+}
+/* REMOVE nav-slider in @Smarthpone Portrait */
+@media screen and (max-width: 1000px) and (orientation: portrait) {
+  .nav-slider {
+    display: none;
+  }
+}
+.bar--nav {
+  background-color: var(--clr-primary);
+  width: 7rem;
+  display: none;
+  margin: 0rem;
+}
+#bar--splash {
+  display: block;
+}
+
+body {
+  margin: 0;
+  font-family: "Roboto Mono", monospace;
+  font-size: 2.5rem;
+  color: var(--clr-dark);
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  height: 115vh;
+  scroll-snap-align: start;
+}
+
+/*SPLASH*/
+.splash {
+  align-content: center;
+  justify-content: center;
+  padding-left: 30%;
+  padding-bottom: 60%;
+}
+.splash--background {
+  background: url(../media/city/city--dark_1920.jpg) no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+.splash--title {
+  margin-bottom: 1rem;
+}
+.splash--subtitle {
+  color: var(--clr-dark);
+  margin-top: -0.3rem;
+}
+.btn {
+  border: 0.2em solid var(--clr-primary);
+  padding: 0.4em;
+  border-radius: 0.5em;
+}
+.btn--read-more--open {
+  color: var(--clr-light);
+  cursor: pointer;
+  box-shadow: inset 0 0 0 var(--clr-primary);
+  -webkit-transition: ease-out 0.4s;
+  -moz-transition: ease-out 0.4s;
+  transition: ease-out 0.4s;
+}
+.read-more{
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width:  100%;
+  height: 100%;
+  overflow: auto;
+  background-color: #2F343F;
+}
+.read-more--content{
+  background-color: var(--clr-dark);
+  color: black;
+  margin: auto;
+  padding: 5rem;
+  border: 0.2em solid var(--clr-primary);
+  width: 80%;
+
+}
+
+/*ABOUT*/
+.about {
+  justify-content: center;
+  align-items: center;
+  padding: 5rem;
+}
+.about--background {
+  background-color: white;
+}
+.about--title {
+  display: flex;
+  flex-direction: row;
+  font-size: 2.5rem;
+}
+.about--title #primary {
+  color: var(--clr-primary);
+}
+.about--title #dark {
+  color: black;
+  padding-left: 3rem;
+}
+.about--text {
+  text-align: center;
+}
+
+/*SERVICES*/
+.services {
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 15rem 5rem 0rem 5rem;
+}
+.services--background {
+  background-color: white;
+}
+.bar--wide {
+  width: 25rem;
+}
+.services--title > h1 {
+  margin-bottom: -2rem;
+}
+.services--subtitles {
+  display: flex;
+  flex-direction: column;
+  color: var(--clr-light);
+  padding-bottom: 3rem;
+}
+.services--subtitles h2 {
+  font-size: 2.3rem;
+  padding-right: 0.7em;
+}
+.services--subtitles > a {
+  color: var(--clr-dark);
+}
+.services--text {
+}
+.services--text > div {
+  height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: opacity 0.5s ease-out;
+  -webkit-transition: opacity 0.5s ease-out;
+  -moz-transition: opacity 0.5s ease-out;
+}
+#text1:target {
+  height: 60rem;
+  opacity: 1;
+}
+#text3:target {
+  height: 60rem;
+  opacity: 1;
+}
+#text2:target {
+  height: 60rem;
+  opacity: 1;
+}
+
+/*landscape*/
+@media screen and (min-width: 320px) and (orientation: landscape) {
+  body {
+    font-size: 1.2rem;
+  }
+  .page {
+    max-height: 103vh;
+  }
+
+  .nav-slider {
+    font-size: 1rem;
+    top: 30%;
+  }
+
+  .splash {
+    padding-top: 20%;
+    margin-bottom: -51vh;
+  }
+  .splash--text {
+    padding-left: 20%;
+  }
+  .bar--horizontal {
+    padding: 0.1rem;
+  }
+
+  .about {
+    padding: 2rem;
+  }
+  .about--title {
+    font-size: 1.5rem;
+  }
+  .about--text {
+    padding-top: 1rem;
+    padding-bottom: 7rem;
+    max-width: 35rem;
+  }
+
+  .services {
+    flex-direction: row;
+    align-items: center;
+    padding: 15rem 3rem 15rem 15rem;
+  }
+  .services--title > div {
+    padding-left: 6rem;
+  }
+  .bar--wide {
+    width: 16rem;
+  }
+  .services--text {
+    padding-top: 5rem;
+    padding-bottom: 0rem;
+    padding-left: 3rem;
+  }
+  .services--subtitles h2 {
+    font-size: 1.3rem;
+  }
+  #text1:target {
+    height: 23rem;
+  }
+  #text2:target {
+    height: 23rem;
+  }
+  #text3:target {
+    height: 23rem;
+  }
+}
+
+@media screen and (min-width: 1025px) and (orientation: landscape) {
+  .page {
+    height: 100vh;
+  }
+
+  .nav-slider {
+    padding-left: 2rem;
+  }
+
+  .about--text {
+    max-width: 50rem;
+    padding-left:5rem;
+  }
+  .about h1 {
+    font-size: 3rem;
+  }
+
+  .services {
+    justify-content: space-around;
+  }
+  .services--text {
+    max-width: 40rem;
+    padding-top: 15rem;
+  }
+  .services--text > div {
+    margin-left: -13rem;
+    padding-left: 12rem;
+  }
+}
+
+/*
+.bigV {
+  position: absolute;
+  color: var(--clr-primary);
+  opacity: 30%;
+  font-size: 60rem;
+  font-family: Work Sans;
+  font-style: normal;
+  font-weight: 600;
+}
+*/
